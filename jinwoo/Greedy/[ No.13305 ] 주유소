@@ -1,1 +1,20 @@
-test
+**********************************************
+Tier : Silver 4
+Link : https://www.acmicpc.net/problem/13305
+
+1. 한 칸 한 칸을 갈때마다 최소의 비용으로 갈 수 있도록 Min값 초기화
+2. 두 번 째 칸의 비용부터 보면서 해당 칸의 비용이 Min 보다 작으면 Min 값은 해당 칸의 비용으로 수정, 아니면 반려
+3. 2번을 거쳐 나온 Min값을 해당 칸의 거리와 곱해 한 칸을 건넘. 과 동시에 총 비용에 덧셈
+**********************************************
+
+N=int(input())
+distance=list(map(int,input().split()))
+cost=list(map(int,input().split()))
+Min=cost[0]
+result=0
+
+for i in range(N-1):
+    if Min>cost[i]:
+        Min=cost[i]
+    result+=Min*distance[i]
+print(result)
