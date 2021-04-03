@@ -1,0 +1,44 @@
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/17413
+
+1. '<'가 나오면 알파벳은 저장하되, '>'가 나왔을 때 뒤집지 않고 단어를 저장
+2. '<'과 '>' 사이에 있는 알파벳이 아니면, 알파벳을 저장
+3. ' '가 나오면 2번에 저장되어 있는 단어를 뒤집어서 저장 ([::-1] 이용). 
+**********************************************
+
+res=""
+temp=""
+flag=False
+S=input()
+for i in range(len(S)):
+    if S[i]=='<':
+        temp=temp[::-1]
+        res+=temp
+        temp=""
+        temp+='<'
+        flag=True
+        continue
+    elif S[i]=='>':
+        temp+='>'
+        res+=temp
+        temp=""
+        flag=False
+        continue
+    elif S[i]==" " or i==len(S)-1:
+        if flag==True:
+            temp+=S[i]
+            continue
+        else:
+            if S[i]==" ":
+                temp=temp[::-1]
+                temp+=" "
+            else:
+                temp+=S[i]
+                temp=temp[::-1]
+            res+=temp
+            temp=""
+    else:
+        temp+=S[i]
+print(res)
+        
