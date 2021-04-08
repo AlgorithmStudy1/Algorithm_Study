@@ -1,0 +1,50 @@
+**********************************************
+Tier : Gold 5
+Link : https://www.acmicpc.net/problem/14503
+
+1. 시뮬레이션 문자는 현재의 위치(r,c)와 서 있는 방향(d)가지고 해결 가능
+2. 꿀팁 : %로 배열을 이용해 방향 동 서 남 북 회전 가능
+3. 문제에 나온 조건에 맞추어 모든 경우의 수를 대비3. 문제에 나온 조건에 맞추어 모든 경우의 수를 대비
+**********************************************
+
+N,M=map(int,input().split())
+r,c,d=map(int,input().split())
+ary=[]
+for i in range(N):
+	ary.append(list(map(int,input().split())))
+
+dx=[-1,0,1,0]
+dy=[0,1,0,-1]
+wallORcleanCount=0
+count=0
+check=0
+stop=0
+
+while(True):
+    if ary[r][c]==0:
+        ary[r][c]=2
+        count+=1
+    nxr=r+dx[(d+3)%4]
+    nxc=c+dy[(d+3)%4]
+    if nxr>=0 and nxr<N and nxc>=0 and nxc<M and ary[nxr][nxc]==0:
+        r=nxr
+        c=nxc
+        d=(d+3)%4
+        continue
+    for i in range(4):
+        nxr=r+dx[(d+3)%4]
+        nxc=c+dy[(d+3)%4]
+        if nxr>=0 and nxr<N and nxc>=0 and nxc<M and (ary[nxr][nxc]==1 or ary[nxr][nxc]==2):
+            d=(d+3)%4
+            if i==3:
+                r=r+dx[(d+2)%4]
+                c=c+dy[(d+2)%4]
+                if ary[r][c]==1:
+                    stop=1
+                break
+            else:
+                check=1
+                continue
+    if stop==1:
+        break
+print(count)
