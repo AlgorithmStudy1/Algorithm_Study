@@ -1,2 +1,27 @@
+**********************************************
+Tier : Gold 5
+Link : https://www.acmicpc.net/problem/12904
 
-df
+1. 문제에 주어진 두 가지 경우를 이용해 S->T 로 접근하는 방법을 생각함(2시간)
+2. 모든 경우의 수를 처리할 수 없음 + 시간 초과의 위험으로 결국 코드를 참조함.
+3. T->S 접근법을 알아냄. 좋은 점 : 뒤에서부터 검사할 수 있음(문제에 주어진 두 가지 경우는 결국 A또는 B를 추가하기 때문)
+**********************************************
+
+S=list(input())
+T=list(input())
+
+flag = False
+while T:
+    if T[-1] == 'A':
+        T.pop()
+    elif T[-1] == 'B':
+        T.pop()
+        T.reverse()
+    if S == T:
+        flag = True
+        break
+
+if flag:
+    print(1)
+else:
+    print(0)
