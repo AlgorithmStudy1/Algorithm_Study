@@ -1,1 +1,21 @@
-1
+**********************************************
+Tier : Bronze 3
+Link : https://www.acmicpc.net/problem/16917
+
+1. 반반 2마리 산 것이 양념1마리+후라이드1마리 산 것보다 싸면 반반 2마리로 양념1마리 후라이드1마리를 대체
+2. 다 대체 한 후 남은 마리수를 더해줘야 함
+3. 이 때 또한 반반2마리 사는 것과 양념 또는 후라이드 1마리 사는 것을 비교해 더 작은 쪽으로 구매
+**********************************************
+
+A,B,C,X,Y=map(int,input().split())
+if A+B<=2*C:
+    print(A*X+B*Y)
+else:
+    res=2*C*min(X,Y)
+    if X>=Y:
+        dif=X-Y
+        res+=min(A*dif, 2*C*dif)
+    else:
+        dif=Y-X
+        res+=min(B*dif, 2*C*dif)
+    print(res)
