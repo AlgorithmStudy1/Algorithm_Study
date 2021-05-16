@@ -1,0 +1,23 @@
+
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/16922
+
+1. 로마 숫자의 최대합은 1000이기 때문에 길이가 1000인 배열을 생성
+2. 각 로마 숫자의 개수를 조합하여 만들 수 있는 숫자의 인덱스에 해당되는 값은 0->1로 수정
+3. 3중 for문을 돌려도 20의 3제곱
+**********************************************
+
+n=int(input())
+check=[0]*(1001)
+for i in range(n+1):
+    for j in range(n-i+1):
+        for k in range(n-i-j+1):
+            l=n-i-j-k
+            val=i+5*j+10*k+50*l
+            check[val]=1
+ans=0
+for i in range(1001):
+    if check[i]==1:
+        ans+=1
+print(ans)
