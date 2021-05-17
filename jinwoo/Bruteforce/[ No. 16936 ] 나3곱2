@@ -1,0 +1,16 @@
+N=int(input())
+result=[]
+ary=list(map(int,input().split()))
+ary=sorted(ary)
+for i in range(N):
+    temp=[]
+    count=0
+    temp.append(ary[i])
+    while ary[i]%3==0:
+        count+=1
+        ary[i]=ary[i]//3
+    temp.append(count)
+    result.append(temp)
+result.sort(key=lambda x:x[1],reverse=True)
+for i in range(N):
+    print(result[i][0], end=' ')
