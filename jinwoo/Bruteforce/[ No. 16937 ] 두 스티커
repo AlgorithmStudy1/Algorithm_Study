@@ -1,1 +1,35 @@
-ㅅ
+  
+**********************************************
+Tier : Silver 4
+Link : https://www.acmicpc.net/problem/16937
+
+1. 모든 스티커 중 2개를 뽑고, 그 두 스티커의 위치를 바꾸고 가로 세로를 바꾸어(돌려서) 확인
+2. 조건에 맞다면 최대값을 계속해서 최신화
+3. 체감상 Silver 4는 아니었음
+**********************************************
+
+H,W=map(int,input().split())
+N=int(input())
+result=[]
+ans=0
+for i in range(N):
+    temp=[]
+    x,y=map(int,input().split())
+    temp.append(x)
+    temp.append(y)
+    result.append(temp)
+for i in range(N):
+    r1=result[i][0]
+    c1=result[i][1]
+    for j in range(i+1,N):
+        r2=result[j][0]
+        c2=result[j][1]
+        for k in range(2):
+            for l in range(2):
+                if ((c1+c2)<=W and max(r1,r2)<=H) or ((r1+r2)<=H and max(c1,c2)<=W):
+                    tempAns=r1*c1+r2*c2
+                    if tempAns>=ans:
+                        ans=tempAns
+                r2,c2=c2,r2
+            r1,c1=c1,r1
+print(ans)
