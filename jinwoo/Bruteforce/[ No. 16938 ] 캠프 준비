@@ -1,0 +1,30 @@
+N,L,R,X=map(int,input().split())
+A=list(map(int,input().split()))
+choice=[0]*15
+
+def go(index):
+    if index==N:
+        cnt=0
+        hap=0
+        hard=-1
+        easy=-1
+        for i in range(N):
+            if choice[i]==0:
+                continue
+            hap+=A[i]
+            cnt+=1
+            if hard==-1 or hard<A[i]:
+                hard=A[i]
+            if easy==-1 or easy>A[i]:
+                easy=A[i]
+        if cnt>=2 and L<=hap<=R and hard-easy>=X:
+            return 1
+        else:
+            return 0
+    choice[index]=1
+    cnt1=go(index+1)
+    choice[index]=0
+    cnt2=go(index+1)
+    return cnt1+cnt2
+
+print(go(0))
