@@ -1,0 +1,31 @@
+**********************************************
+Tier : Silver 1
+Link : https://www.acmicpc.net/problem/16943
+
+1. bruteforce를 재귀로 푸는 대표적인 문제
+2. go 라는 함수에 인자로 어떤 것을 넘길 지 많이 경험해봐야 함
+3. 공책에 가지치기 해가며 for문 안에서 넘어가는 함수와 return 값을 적어봐야함
+**********************************************
+
+A,B=input().split()
+A=list(map(int,A))
+N=len(A)
+B=int(B)
+check=[0]*N
+def go(index, num):
+    if index==N:
+        return num
+    ans=-1
+    for i in range(N):
+        if check[i]==1:
+            continue
+        if index==0 and A[i]==0:
+            continue
+        check[i]=1
+        temp=go(index+1, num*10+A[i])
+        if temp<B:
+            if ans==-1 or ans<temp:
+                ans=max(ans, temp)
+        check[i]=0
+    return ans
+print(go(0,0))
