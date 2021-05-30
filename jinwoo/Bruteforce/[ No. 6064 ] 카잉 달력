@@ -1,1 +1,24 @@
-1
+**********************************************
+Tier : Silver 1
+Link : https://www.acmicpc.net/problem/6064
+
+1. 건너 뛰며 해보는 bruteforce ( 모든 경우를 해보면 40000*40000 즉, 16억이기 때문에 )
+2. 해를 x로 초기화한 뒤 M씩 더해가며 그 해에 해당하는 N의 경우만 파악을 하게 되면 모든 경우를 해볼 필요 없음
+3. 안해보면 풀기 조금 힘든 문제
+**********************************************
+
+t=int(input())
+for i in range(t):
+    check=1
+    m,n,x,y=map(int,input().split())
+    x-=1
+    y-=1
+    k=x
+    while k<n*m:
+        if k%n==y:
+            print(k+1)
+            check=0
+            break
+        k+=m
+    if check==1:
+        print(-1)
