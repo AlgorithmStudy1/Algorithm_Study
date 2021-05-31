@@ -1,1 +1,26 @@
-1
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/15649
+
+1. 재귀로 푸는 bruteforce 알고리즘
+2. 다음 함수에서 활용되는 인자와 배열들의 의미를 알아야함
+3. 트리 형태로 가지치기 해가며 그려보는 식으로 공부
+**********************************************
+
+import sys
+N,M=map(int,input().split())
+check=[0]*(N+1)
+a=[0]*M
+def go(index, n, m):
+    if index==M:
+        sys.stdout.write(' '.join(map(str,a))+'\n')
+        return
+    
+    for i in range(1,n+1):
+        if check[i]==1:
+            continue
+        check[i]=1
+        a[index]=i
+        go(index+1,n,m)
+        check[i]=0
+go(0,N,M)
