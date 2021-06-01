@@ -1,0 +1,23 @@
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/15651
+
+1. 15649번 N과 M (1) 문제에서 중복을 방지해주었던 continue 문을 제거
+2. 15649번에서 진화한 문제
+**********************************************
+
+import sys
+N,M=map(int,input().split())
+check=[0]*(N+1)
+a=[0]*M
+def go(index, n, m):
+    if index==M:
+        sys.stdout.write(' '.join(map(str,a))+'\n')
+        return
+    
+    for i in range(1,n+1):
+        check[i]=1
+        a[index]=i
+        go(index+1,n,m)
+        check[i]=0
+go(0,N,M)
