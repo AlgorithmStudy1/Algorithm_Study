@@ -1,3 +1,11 @@
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/15654
+
+1. 15649번 N과 M (1)에서 1-N 까지가 아니라 입력받은 값으로 대체 
+2. ary라는 배열을 만들어줌
+**********************************************
+
 import sys
 N,M=map(int,input().split())
 ary=list(map(int,input().split()))
