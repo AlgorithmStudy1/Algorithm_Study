@@ -1,3 +1,10 @@
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/15656
+
+1. 15655번 N과 M (6)을 응용해 해결
+**********************************************
+
 import sys
 N,M=map(int,input().split())
 ary=list(map(int,input().split()))
