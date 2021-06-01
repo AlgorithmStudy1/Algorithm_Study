@@ -1,0 +1,18 @@
+import sys
+N,M=map(int,input().split())
+ary=list(map(int,input().split()))
+ary.sort()
+check=[0]*(N+1)
+a=[0]*M
+def go(index, start, n, m):
+    if index==M:
+        sys.stdout.write(' '.join(map(str,a))+'\n')
+        return
+    for i in range(start,n+1):
+        if check[i]==1:
+            continue
+        check[i]=1
+        a[index]=ary[i-1]
+        go(index+1,i+1,n,m)
+        check[i]=0
+go(0,1,N,M)
