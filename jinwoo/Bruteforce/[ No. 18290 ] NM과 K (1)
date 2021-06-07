@@ -1,3 +1,12 @@
+**********************************************
+Tier : Silver 3
+Link : https://www.acmicpc.net/problem/18290
+
+1. N과 M의 2차원 배열 형태로 해결
+2. 사방을 확인하며 주변에 갈 수 있는 경우에만 함수 적용
+3. 그냥 하면 시간초과, 함수의 인자로 px를 추가시켜 맨 처음부터 재확인하는 것을 방지
+**********************************************
+
 n, m, k = map(int,input().split())
 a = [list(map(int,input().split())) for _ in range(n)]
 c = [[False]*m for _ in range(n)]
