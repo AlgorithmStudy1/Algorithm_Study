@@ -1,0 +1,96 @@
+# dfs 인접행렬
+
+def dfs(v):
+    visited[v]=1
+    print(v)
+    for i in range(1,N+1):
+        if visited[i]==0 and ary[v][i]==1:
+            dfs(i)
+
+N,M,V=map(int,input().split())
+visited=[0]*(N+1)
+ary=[[0]*(N+1) for _ in range(N+1)]
+
+for i in range(M):
+    x,y=map(int,input().split())
+    ary[x][y]=1
+    ary[y][x]=1
+
+dfs(V)
+
+# dfs 인접리스트
+
+def dfs(v):
+    visited[v]=1
+    print(v)
+    for i in ary[v]:
+        if visited[i]==0:
+            dfs(i)
+
+N,M,V=map(int,input().split())
+visited=[0]*(N+1)
+ary=[[] for _ in range(N+1)]
+
+for i in range(M):
+    x,y=map(int,input().split())
+    ary[x].append(y)
+    ary[y].append(x)
+
+dfs(V)
+
+#############################################
+#############################################
+
+# bfs 인접행렬
+
+from collections import deque
+
+def bfs(v):
+    queue=deque()
+    queue.append(v)
+    visited[v]=1
+    while(queue):
+        index=queue.popleft()
+        print(index)
+        for i in range(1,N+1):
+            if visited[i]==0 and ary[index][i]==1:
+                queue.append(i)
+                visited[i]=1
+                
+N,M,V=map(int,input().split())
+visited=[0]*(N+1)
+ary=[[0]*(N+1) for _ in range(N+1)]
+
+for i in range(M):
+    x,y=map(int,input().split())
+    ary[x][y]=1
+    ary[y][x]=1
+
+bfs(V)
+
+# bfs 인접리스트
+
+from collections import deque
+
+def bfs(v):
+    queue=deque()
+    queue.append(v)
+    visited[v]=1
+    while(queue):
+        index=queue.popleft()
+        print(index)
+        for i in ary[index]:
+            if visited[i]==0:
+                queue.append(i)
+                visited[i]=1
+                
+N,M,V=map(int,input().split())
+visited=[0]*(N+1)
+ary=[[] for _ in range(N+1)]
+
+for i in range(M):
+    x,y=map(int,input().split())
+    ary[x].append(y)
+    ary[y].append(x)
+
+bfs(V)
