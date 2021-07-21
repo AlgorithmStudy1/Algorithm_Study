@@ -1,1 +1,18 @@
-1
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/1845
+
+1. 딕셔너리 구조를 이용하기 위해 collections 모듈의 Counter 클래스 사용
+2. 배열을 넣게되면 {값:값이 나온 횟수, 값:값이 나온 횟수 ...} 이런 식으로 저장
+3. 만약 폰켓몬 개수의 반보다 딕셔너리의 키 개수가 더 많다면, 최대 개수인 폰켓몬 개수의 반을 선택. 그렇지 않다면 딕셔너리의 키 개수 선택.
+**********************************************
+
+from collections import Counter
+
+def solution(nums):
+    poncket=Counter(nums)
+    if len(nums)//2<len(list(poncket)):
+        answer=len(nums)//2
+    else:
+        answer=len(list(poncket))
+    return answer
