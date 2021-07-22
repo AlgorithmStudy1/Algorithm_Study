@@ -1,3 +1,12 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/42748
+
+1. 시작부터 끝까지 배열을 자름
+2. 정렬
+3. 주어진 인덱스의 값 구하기
+**********************************************
+
 def solution(array, commands):
     answer = []
     for i in range(len(commands)):
