@@ -1,0 +1,10 @@
+def solution(array, commands):
+    answer = []
+    for i in range(len(commands)):
+        start=commands[i][0]
+        finish=commands[i][1]
+        pick=commands[i][2]
+        newArray=array[start-1:finish]
+        newArray.sort()
+        answer.append(newArray[pick-1])
+    return answer
