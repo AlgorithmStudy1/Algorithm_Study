@@ -1,0 +1,29 @@
+def solution(answers):
+    answer=[]
+    rankAry=[]
+    person1=[1,2,3,4,5]
+    person2=[2,1,2,3,2,4,2,5]
+    person3=[3,3,1,1,2,2,4,4,5,5]
+    count1=0
+    count2=0
+    count3=0
+    for i in range(len(answers)):
+        if answers[i]==person1[i%5]:
+            count1+=1
+        if answers[i]==person2[i%8]:
+            count2+=1
+        if answers[i]==person3[i%10]:
+            count3+=1
+    answerCount = [count1,count2,count3]
+    for i in range(3):
+        rank=3
+        for j in range(3):
+            if i==j:
+                continue
+            if answerCount[i]>=answerCount[j]:
+                rank-=1
+        rankAry.append(rank)
+    for i in range(3):
+        if rankAry[i]==1:
+            answer.append(i+1)
+    return answer
