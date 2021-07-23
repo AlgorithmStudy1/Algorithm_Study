@@ -1,0 +1,24 @@
+def solution(lottos, win_nums):
+    answer = []
+    rank=[6,5,4,3,2]
+    maxCount=0
+    minCount=0
+    for num in lottos:
+        if num!=0 and num in win_nums:
+            maxCount+=1
+            minCount+=1
+        elif num==0:
+            maxCount+=1
+    for i in range(5):
+        if maxCount not in rank:
+            answer.append(6)
+            break
+        elif maxCount==rank[i]:
+            answer.append(i+1)
+    for i in range(5):
+        if minCount not in rank:
+            answer.append(6)
+            break
+        elif minCount==rank[i]:
+            answer.append(i+1)   
+    return answer
