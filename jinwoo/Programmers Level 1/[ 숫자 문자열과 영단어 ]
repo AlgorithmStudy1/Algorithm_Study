@@ -1,4 +1,11 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/81301
 
+1. zero부터 nine 까지 담겨있는 배열을 생성
+2. replace 함수를 통해 문자열에 있으면 숫자로 바꿔줌
+3. 최종적으로 바뀐 문자열을 int로 변환한 뒤 return
+**********************************************
 
 def solution(s):
     words=['zero','one','two','three','four','five','six','seven','eight','nine']
