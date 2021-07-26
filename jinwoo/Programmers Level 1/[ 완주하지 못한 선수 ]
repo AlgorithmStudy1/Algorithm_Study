@@ -1,0 +1,17 @@
+from collections import Counter
+
+def solution(participant, completion):
+    answer=""
+    parDict=dict(Counter(participant))
+    comDict=dict(Counter(completion))
+    parDictKeys=list(parDict.keys())
+
+    for key in parDictKeys:
+        if key in comDict and parDict[key]-comDict[key]==1:
+            answer=key
+            break
+        elif key not in comDict:
+            answer=key
+            break
+        
+    return answer
