@@ -1,0 +1,17 @@
+from itertools import combinations
+
+def sosu(num):
+    flag=True #소수
+    for i in range(2,num//2+1):
+        if num%i==0:
+            flag=False
+            break
+    return flag
+    
+def solution(nums):
+    answer=0
+    for i in combinations(nums,3):
+        Sum=sum(i)
+        if sosu(Sum):
+            answer+=1
+    return answer
