@@ -1,3 +1,12 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12977
+
+1. 소수를 판별하는 함수를 구현
+2. combinations 클래스를 이용해 배열의 조합을 만들어 냄
+3. 만들어낸 조합의 합을 함수에 넣은 뒤 true 일 시 answer 증가
+**********************************************
+
 from itertools import combinations
 
 def sosu(num):
