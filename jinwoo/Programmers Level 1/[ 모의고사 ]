@@ -2,8 +2,8 @@
 Tier : Level 1
 Link : https://programmers.co.kr/learn/courses/30/lessons/42840
 
-1. 각각의 수포자가 맞춘 개수를 나타내는 anserCount 배열 생성
-2. % 연산자를 통해 계산
+1. 각각의 수포자가 맞춘 개수를 나타내는 answerCount 배열 생성
+2. % 연산자를 통해 각각의 수포자가 맞춘 개수 계산
 3. rank를 구하기 위해 2중 for문 사용
 **********************************************
 
