@@ -1,3 +1,12 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/77884
+
+1. 약수의 개수를 return 하는 함수를 구현
+2. 약수의 개수가 짝수라면 그 수를 더하고, 홀수면 그 수를 뺌
+3. 누적된 값을 구해 return
+**********************************************
+
 def go(num):
     count=0
     for i in range(1,num//2+1):
