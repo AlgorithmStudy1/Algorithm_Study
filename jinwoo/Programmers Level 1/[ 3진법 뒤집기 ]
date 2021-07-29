@@ -1,0 +1,10 @@
+def solution(n):
+    answer=0
+    sam=''
+    while n!=0:
+        sam=str(n%3)+sam
+        n=n//3
+    sam=sam[::-1]
+    for i in range(len(sam)):
+        answer+=int(sam[i])*(3**(len(sam)-i-1))
+    return answer
