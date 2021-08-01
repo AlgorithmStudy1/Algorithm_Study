@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12919
+
+1. 찾고자 하는 숫자나 배열에 따라 인덱스값을 return 해주는 index함수 활용
+**********************************************
+
 def solution(seoul):
     answer = '김서방은 '+str(seoul.index('Kim'))+'에 있다'
     return answer
