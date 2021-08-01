@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12903
+
+1. 문자열의 길이가 짝수인지 홀수인지에 따라 answer를 결정후 return
+**********************************************
+
 def solution(s):
     answer = ''
     if(len(s)%2==1):
