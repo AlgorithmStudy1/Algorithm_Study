@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12910
+
+1. 나누어 떨어지면 answer 배열에 append하고, answer배열의 길이가 0이면 -1을 append
+**********************************************
+
 def solution(arr, divisor):
     answer = []
     for x in arr:
