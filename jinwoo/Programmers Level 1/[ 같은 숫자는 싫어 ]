@@ -3,7 +3,7 @@ Tier : Level 1
 Link : https://programmers.co.kr/learn/courses/30/lessons/12906
 
 1. 앞에서부터 숫자를 보면서 해당 숫자와 그 다음 숫자가 같지 않거나, 마지막 숫자 전의 숫자라면 answer에 append
-2. 마지막 숫자 전의 숫자는 무조건 넣은 상태에서, 그 숫자가 마지막 숫자와 같으면 answerd에 append 하지 않고 다르면 append
+2. 마지막 숫자 전의 숫자는 무조건 넣은 상태에서, 그 숫자가 마지막 숫자와 같으면 answer에 append 하지 않고 다르면 append
 3. 만들어진 answer를 return
 **********************************************
 
