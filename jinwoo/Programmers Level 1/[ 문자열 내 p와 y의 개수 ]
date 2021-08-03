@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12916
+
+1. count 메소드를 이용해 p와 y의 개수를 구해서, 조건에 따라서 return
+**********************************************
+
 def solution(s):
     s=s.lower()
     countp=s.count('p')
