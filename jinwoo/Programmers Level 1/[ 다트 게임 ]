@@ -1,0 +1,37 @@
+def solution(dartResult):
+    answer = 0
+    numAry=[]
+    score=[0,0,0]
+    for i in range(len(dartResult)-1):
+        if dartResult[i].isdigit():
+            if dartResult[i]=='1' and dartResult[i+1]=='0':
+                numAry.append('10')
+            elif dartResult[i]=='0' and dartResult[i-1]=='1':
+                continue
+            else:
+                numAry.append(dartResult[i])
+    newDartResult=dartResult.replace(numAry[0],'^')
+    newDartResult=newDartResult.replace(numAry[1],'^')
+    newDartResult=newDartResult.replace(numAry[2],'^')
+    newDartResult=newDartResult.replace('0','')
+    gihoAry=newDartResult.split('^')
+    if len(gihoAry)==4: del gihoAry[0]
+
+    for i in range(3):
+        if gihoAry[i][0]=='S':
+            score[i]=int(numAry[i])**1
+        elif gihoAry[i][0]=='D':
+            score[i]=int(numAry[i])**2
+        elif gihoAry[i][0]=='T':
+            score[i]=int(numAry[i])**3
+        if len(gihoAry[i])==2:
+            if gihoAry[i][1]=='*':
+                if i==0:
+                    score[0]*=2
+                else:
+                    score[i]*=2
+                    score[i-1]*=2
+            elif gihoAry[i][1]=='#':
+                score[i]*=-1
+    answer=sum(score)
+    return answer
