@@ -1,0 +1,13 @@
+def solution(strings, n):
+    answer = []
+    aryStrings=[]
+    strings.sort()
+    for x in strings:
+        aryStrings.append(list(x))
+    aryStrings=sorted(aryStrings,key=lambda x:x[n])
+    for x in aryStrings:
+        temp=''
+        for y in x:
+            temp+=y
+        answer.append(temp)
+    return answer
