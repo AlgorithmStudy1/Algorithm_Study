@@ -1,0 +1,27 @@
+def solution(n, arr1, arr2):
+    answer = []
+    newArr1=[]
+    newArr2=[]
+    
+    for i in range(n):
+        binary=bin(arr1[i])[2:]
+        while len(binary)<n:
+            binary='0'+binary
+        newArr1.append(binary)
+        
+    for i in range(n):
+        binary=bin(arr2[i])[2:]
+        while len(binary)<n:
+            binary='0'+binary
+        newArr2.append(binary)
+
+    for i in range(n):
+        temp=''
+        for j in range(n):
+            if newArr1[i][j]=='1' or newArr2[i][j]=='1':
+                temp+='#'
+            else:
+                temp+=' '
+        answer.append(temp)
+        
+    return answer
