@@ -1,0 +1,11 @@
+def solution(s):
+    s=s.lower()
+    countp=s.count('p')
+    county=s.count('y')
+    if countp==0 and county==0:
+        answer=True
+    elif countp==county:
+        answer=True
+    else:
+        answer=False
+    return answer
