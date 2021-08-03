@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12917
+
+1. 주어진 문자열을 배열로 바꾸고, 내림차순으로 정렬 후 join 메소드를 통해 배열에 있는 문자열을 합쳐 answer에 넣고 return
+**********************************************
+
 def solution(s):
     ary=list(s)
     ary=sorted(ary,reverse=True)
