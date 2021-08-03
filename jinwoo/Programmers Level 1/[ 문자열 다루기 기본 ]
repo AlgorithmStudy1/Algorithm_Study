@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12918
+
+1. 길이가 4 또는 6이고, 숫자라면 True를 return
+**********************************************
+
 def solution(s):
     answer=False
     if (len(s)==4 or len(s)==6) and s.isdigit():
