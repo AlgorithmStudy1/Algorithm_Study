@@ -1,0 +1,8 @@
+def solution(n):
+    s="수박"
+    if n%2==0:
+        answer=s*(n//2)
+    else:
+        answer=s*((n+1)//2)
+        answer=answer[:len(answer)-1]
+    return answer
