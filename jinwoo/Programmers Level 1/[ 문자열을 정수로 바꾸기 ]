@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12925
+
+1. 맨 앞이 숫자면 전체를, -면 음수를, +면 양수를 return
+**********************************************
+
 def solution(s):
     if s[0].isdigit():
         return int(s)
