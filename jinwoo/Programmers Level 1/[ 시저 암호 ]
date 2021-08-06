@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12926
+
+1. 알파벳이고 소문자일 때, 알파벳이고 대문자일 때, 알파벳이 아닐 때로 나누어 해결
+**********************************************
+
 def solution(s, n):
     answer=''
     for ch in s:
