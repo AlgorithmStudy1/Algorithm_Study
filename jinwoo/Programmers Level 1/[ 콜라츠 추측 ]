@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/12943
+
+1. 숫자가 1이면 0을 리턴, 그 이상이면 문제의 조건에 따라 숫자를 바꿔가며 1이면 count를 return
+**********************************************
+
 def solution(num):
     count=0
     if num==1:
