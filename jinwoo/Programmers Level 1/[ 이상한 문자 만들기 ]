@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/68935
+
+1. 공백일 때, 문자가 짝수번 째 있을 때, 홀수번 째 있을 때 나누어 해결
+**********************************************
+
 def solution(s):
     answer = ''
     count=2
