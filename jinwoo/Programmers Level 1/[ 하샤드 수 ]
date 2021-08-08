@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 1
+Link : https://programmers.co.kr/learn/courses/30/lessons/1845
+
+1. x를 문자로 바꾼 뒤, 각 자리수의 합을 구하고 x로 나누어 보았을 때 나누어떨어지면 True를, 아니면 False를 return
+**********************************************
+
 def solution(x):
     x=str(x)
     num=0
