@@ -1,0 +1,22 @@
+**********************************************
+Tier : Level 2
+Link : https://programmers.co.kr/learn/courses/30/lessons/43165
+
+1. 계속 반복되는 재귀를 이용
+2. dfs(배열의 인덱스, 누적된 합)
+2. ex) 1,1,1,1,1을 더하게 되는 경우 dfs(0,0)부터 시작 dfs(1,1)→dfs(2,2)→dfs(3,3)→dfs(4,4)→   [ dfs(5,5)에서 ] if문에 걸려 누적된 합과 target을 비교해 같으면 answer를 +1
+**********************************************
+
+def solution(numbers, target):   
+    def dfs(index,Sum):
+        global answer
+        if index==len(numbers) :
+            if Sum==target:
+                answer+=1
+            return
+        dfs(index+1,Sum+numbers[index])
+        dfs(index+1,Sum-numbers[index])
+        
+    dfs(0,0)
+    return answer
+answer=0
