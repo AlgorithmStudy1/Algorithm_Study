@@ -1,3 +1,11 @@
+**********************************************
+Tier : Level 2
+Link : https://programmers.co.kr/learn/courses/30/lessons/42746
+
+1. 수들의 최대 길이가 세자리이므로 최소 세 자리 이상을 만들어 준 뒤 내림차순 정렬
+2. 0000 인 경우 0000이 아닌 0을 return 하기 위해 int로 바꾼 뒤 str로 return
+**********************************************
+
 def solution(numbers):
     numbers=list(map(str,numbers))
     numbers=sorted(numbers,key=lambda x:x*3,reverse=True)
