@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 2
+Link : https://programmers.co.kr/learn/courses/30/lessons/42584
+
+1. 2중 for문으로 자신보다 작거나 같은 숫자가 나오면 하루씩 추가
+**********************************************
+
 def solution(prices):
     answer=[]
     for i in range(len(prices)):
