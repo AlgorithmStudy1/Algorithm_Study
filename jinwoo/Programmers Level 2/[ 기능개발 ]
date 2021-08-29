@@ -1,3 +1,12 @@
+**********************************************
+Tier : Level 2
+Link : https://programmers.co.kr/learn/courses/30/lessons/42586
+
+1. 각각의 기능들이 걸리는 개발 속도를 구하는 days 배열
+2. 배열의 앞에서부터 비교해 보면서, 큰 수가 나오면 비교하는 수를 바꿔주고 answer배열에 count를 append. 작으면 그냥 다음 수랑 비교
+3. 마지막은 비교할 수 없으니 누적되어있는 count를 answer배열에 append
+**********************************************
+
 def solution(progresses, speeds):
     answer=[]
     days=[]
@@ -6,7 +15,7 @@ def solution(progresses, speeds):
         while progresses[i]+speeds[i]*count<100:
             count+=1
         days.append(count)
-    print(days)
+        
     count=1
     day=days.pop(0)
     while len(days)!=0:
