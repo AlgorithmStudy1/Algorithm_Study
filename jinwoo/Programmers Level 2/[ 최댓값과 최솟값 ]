@@ -1,3 +1,10 @@
+**********************************************
+Tier : Level 2
+Link : https://programmers.co.kr/learn/courses/30/lessons/12939
+
+1. 배열의 최솟값과 최댓값을 찾아 return
+**********************************************
+
 def solution(s):
     ary=ary=list(map(int,s.split(" ")))
     answer=str(min(ary))+' '+str(max(ary))
