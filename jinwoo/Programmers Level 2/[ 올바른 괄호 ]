@@ -1,0 +1,15 @@
+def solution(s):
+    if s.count('(')!=s.count(')'):
+        return False
+    ary=[]
+    result=True
+    for x in s:
+        if x=='(':
+            ary.append('(')
+        elif x==')':
+            if len(ary)!=0:
+                ary.pop()
+            else:
+                result=False
+                break
+    return result
