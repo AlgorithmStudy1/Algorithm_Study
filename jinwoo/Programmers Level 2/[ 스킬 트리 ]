@@ -1,0 +1,15 @@
+def solution(skill, skill_trees):
+    answer = 0
+    for st in skill_trees:
+        check=0
+        skill_copy=skill
+        for my_skill in st:
+            if skill_copy.find(my_skill)!=-1:
+                if skill_copy[0]==my_skill:
+                    skill_copy=skill_copy[1:]
+                else:
+                    check=1
+                    break
+        if check==0:
+            answer+=1
+    return answer
