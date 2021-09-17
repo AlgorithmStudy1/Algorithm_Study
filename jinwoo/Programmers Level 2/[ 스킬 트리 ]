@@ -1,14 +1,23 @@
+**********************************************
+Tier : Level 2
+Link : https://programmers.co.kr/learn/courses/30/lessons/49993
+
+1. skill_trees 배열 안에 있는 스킬 트리가 가능하면 check를 0, 불가능하면 check를 1
+2. 내가 사용하는 스킬트리를 앞에서부터 보면서, 내가 사용한 스킬이 skill 문자열 맨 앞에 위치해 있어야함.
+3. 있으면 맨 앞 스킬 제거. 없으면 불가능한 스킬트리
+**********************************************
+
 def solution(skill, skill_trees):
     answer = 0
     for st in skill_trees:
-        check=0
+        check=0 #skill_trees 배열 안에 있는 스킬 트리가 가능하면 check를 0, 불가능하면 check를 1
         skill_copy=skill
         for my_skill in st:
-            if skill_copy.find(my_skill)!=-1:
-                if skill_copy[0]==my_skill:
-                    skill_copy=skill_copy[1:]
+            if skill_copy.find(my_skill)!=-1: #내가 사용한 스킬이 skill에 있다면. 없는 것은 건너뜀
+                if skill_copy[0]==my_skill: #맨앞에 있다면
+                    skill_copy=skill_copy[1:] #맨앞의 스킬을 제거 (다음에 내가 사용할 스킬이 skill문자열 맨앞에 있는지 확인해야 하므로)
                 else:
-                    check=1
+                    check=1 #맨 앞에 없으면 나의 스킬트리는 불가능한 스킬트리임.
                     break
         if check==0:
             answer+=1
